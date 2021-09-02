@@ -1,0 +1,30 @@
+﻿@model RegistroDePersonas.Models.ViewModels.PersonaViewModel
+@{
+    ViewBag.Title = "Agregar";
+}
+
+<div class="row mb-3">
+    <div class="col-md-12 ">
+        <h2>@ViewBag.Title</h2>
+    </div>
+</div>
+
+@using (Html.BeginForm("Nuevo", "Persona", FormMethod.Post)) {
+<div class="row">
+    <div class="col-md-6 mb-4">
+            @Html.LabelFor(d => d.Nombre)
+            @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "text-danger" })
+    </div>
+    <div class="col-md-12">
+        @Html.LabelFor(d => d.FechaDeNacimiento)<br />
+        @Html.EditorFor(d => d.FechaDeNacimiento, "", new { @class = "form-control" })
+        <br/>
+        @Html.ValidationMessageFor(d => d.FechaDeNacimiento, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-6 text-right">
+        <input value="Guardar" class="btn btn-primary" type="submit" />
+    </div>
+</div>
+}
