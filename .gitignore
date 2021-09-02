@@ -5,7 +5,8 @@ project.fragment.lock.json
 artifacts/
 
 
-.vs/
+/vs
+.vs/*
 
 
 
