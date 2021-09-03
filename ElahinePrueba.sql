@@ -1,4 +1,7 @@
-CREATE DATABASE ElahinePrueba;
+IF db_id('ElahinePrueba') IS NULL 
+    CREATE DATABASE ElahinePrueba;
+
+GO
 
 USE ElahinePrueba;
 
